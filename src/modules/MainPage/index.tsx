@@ -14,12 +14,12 @@ export default function Main() {
   const [totalPages, setTotalPages] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
 
-  const [reRender, setRerender] = useState(false);
-  function refresh() {
+  const [rerender, setRerender] = useState(false);
+  function refreshList() {
     setRerender((state) => !state);
   }
   useEffect(() => {
-    getVideosAsync(currentPage, 1).then((res) => {
+    getVideosAsync(currentPage, 5).then((res) => {
       if (res.status == 200) {
         const data = JSON.parse(res.data);
         const dataDeepCopy = data.documents.map(
@@ -43,7 +43,7 @@ export default function Main() {
         setDocuments(dataDeepCopy);
       }
     });
-  }, [reRender, currentPage]);
+  }, [rerender, currentPage]);
 
   const documentCards = documents.map((doc) => {
     return (
@@ -57,7 +57,7 @@ export default function Main() {
 
   return (
     <>
-      <Header />
+      <Header refreshList={refreshList}/>
       <Grid container justifyContent="center" style={{ marginTop: 20 }}>
         {documentCards}
       </Grid>

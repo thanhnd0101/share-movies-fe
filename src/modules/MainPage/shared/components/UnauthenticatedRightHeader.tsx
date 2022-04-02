@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import { TextField, Button } from "@mui/material";
 import { loginAsync } from "../apiCalls/login";
 import { useDispatch } from "react-redux";
@@ -77,18 +77,7 @@ export default function UnauthenticatedRightHeader({
         Register
       </Button>
 
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
-      <ToastContainer />
+    
     </>
   );
 }

@@ -1,7 +1,7 @@
 import { Avatar, Grid, Typography, Divider } from "@mui/material";
 import RightHeader from "./RightHeader";
 
-export default function Header() {
+export default function Header({ refreshList }: { refreshList: Function }) {
   return (
     <>
       <Grid container spacing={2}>
@@ -22,7 +22,7 @@ export default function Header() {
           justifyContent="center"
           alignItems="center"
         >
-          <RightHeader />
+          <RightHeader refreshList={refreshList} />
         </Grid>
       </Grid>
       <Divider />

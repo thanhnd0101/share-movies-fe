@@ -1,1 +1,1 @@
-export const getMainAppHost = process.env.REACT_APP_HOST || "http://localhost:3000";
+export const getMainAppHost = process.env.REACT_APP_HOST || "https://share-movies-be.herokuapp.com";
